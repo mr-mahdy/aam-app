@@ -428,6 +428,10 @@ section {
 	color: #ffffff;
 }
 
+#sign_in form input {
+	color: #ffffff;
+}
+
 /*---------------------------------------
       PROFIL              
   -----------------------------------------*/
@@ -1115,4 +1119,36 @@ footer span,
 		bottom: 6em;
 	}
 
+}
+
+/*---------------------------------------
+      ADMIN             
+  -----------------------------------------*/
+
+.profile {
+	padding: 20px;
+	border: 5px solid #1f1f1f;
+	box-shadow: 10px 10px 5px #aaaaaa;
+
+}
+
+.table {
+	text-align: left;
+}
+
+.profile img {
+	margin: 0 auto;
+}
+
+.admin .line-bar {
+	margin-top: -30px;
+	color: #d9d9d9;
+	display: block;
+	font-size: 5em;
+	line-height: 0;
+	margin-bottom: 80px;
+}
+
+#map {
+	width: 100px;
 }

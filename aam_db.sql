@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 22, 2020 at 05:37 AM
+-- Generation Time: Jan 22, 2020 at 02:34 PM
 -- Server version: 10.1.36-MariaDB
 -- PHP Version: 7.2.11
 
@@ -42,6 +42,8 @@ CREATE TABLE `kalender_ceramah` (
   `tamu` varchar(255) NOT NULL,
   `karakteristik` varchar(255) NOT NULL,
   `saran_tema` varchar(255) NOT NULL,
+  `status_jadwal` varchar(128) NOT NULL,
+  `date_created` date NOT NULL,
   `tanggal_mulai` datetime NOT NULL,
   `tanggal_akhir` datetime NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
@@ -50,18 +52,8 @@ CREATE TABLE `kalender_ceramah` (
 -- Dumping data for table `kalender_ceramah`
 --
 
-INSERT INTO `kalender_ceramah` (`id`, `nama`, `telp`, `nama_lembaga`, `waktu`, `lokasi`, `jenis_acara`, `sifat_acara`, `jml_pria`, `jml_wanita`, `tamu`, `karakteristik`, `saran_tema`, `tanggal_mulai`, `tanggal_akhir`) VALUES
-(21, 'Mahdy', '089514215664', 'DKM Masjid', 'Pagi', 'Melong Raya 05/25 Melong Cimahi Selatan CImahi Jawa Barat Indonesia', 'Pengajian Umum', 'Internal', 10, 20, '', '', 'Cara supaya doa mustajab', '2020-01-03 00:00:00', '2020-01-04 00:00:00'),
-(34, 'Mahdy', '089514215664', 'DKM Masjid', 'Malam', 'Melong Raya 05/25 MelongCimahi Selatan CImahi Jawa Barat Indonesia', 'Pengajian Umum', 'Terbuka', 10, 20, 'Dosen', 'Anak Muda', 'Waktu dalam perspektif Al-Quran', '2020-01-23 00:00:00', '2020-01-24 00:00:00'),
-(35, 'Mahdy', '089514215664', 'DKM Masjid', 'Pagi', 'Melong Raya 05/25 MelongCimahi Selatan CImahi Jawa Barat Indonesia', 'Kuliah', 'Terbuka', 10, 20, 'Dosen', 'Anak Muda', 'Membangun rumah tangga sakinah', '2020-01-01 00:00:00', '2020-01-02 00:00:00'),
-(36, 'Mahdy', '089514215664', 'DKM Masjid', 'Sore', 'Melong Raya 05/25 MelongCimahi Selatan CImahi Jawa Barat Indonesia', 'Seminar', 'Terbuka', 10, 20, 'Dosen', 'Anak Muda', 'Waktu dalam perspektif Al-Quran', '2020-01-25 00:00:00', '2020-01-26 00:00:00'),
-(37, 'Mahdy', '089514215664', 'DKM Masjid', 'Siang', 'Melong Raya 05/25 MelongCimahi Selatan CImahi Jawa Barat Indonesia', 'Pengajian Umum', 'Internal', 10, 20, 'Dosen', 'Anak Muda', 'Waktu dalam perspektif Al-Quran', '2020-01-31 00:00:00', '2020-02-01 00:00:00'),
-(38, 'Agung', '089514215664', 'DKM Masjid', 'Siang', 'Melong Raya 05/25 MelongCimahi Selatan CImahi Jawa Barat Indonesia', 'Kuliah', 'Internal', 10, 20, 'Dosen', 'Anak Muda', 'Bersatu dalam keberagaman', '2020-01-24 00:00:00', '2020-01-25 00:00:00'),
-(39, 'Mahdy', '089514215664', 'DKM Masjid', 'Malam', 'Melong Raya 05/25 MelongCimahi Selatan CImahi Jawa Barat Indonesia', 'Seminar', 'Terbuka', 10, 20, 'Dosen', 'Anak Muda (Mahasiswa)', 'Bersatu dalam keberagaman', '2020-01-30 00:00:00', '2020-01-31 00:00:00'),
-(40, 'Mahdy Khairudin', '089514215664', 'DKM Masjid', 'Sore', 'Jl. Melong Raya No. 99 RT/RW 05/25 MelongCimahi Selatan CImahi Jawa Barat Indonesia', 'Seminar', 'Terbuka', 10, 20, 'Dosen', 'Anak Muda (Mahasiswa)', 'Bersatu dalam keberagaman', '2020-01-10 00:00:00', '2020-01-11 00:00:00'),
-(41, 'Mahdy Khairudin', '089514215664', 'DKM Masjid', 'Sore', 'Jl. Melong Raya No. 99 RT/RW 05/25 MelongCimahi Selatan CImahi Jawa Barat Indonesia', 'Seminar', 'Terbuka', 10, 20, 'Dosen', 'Anak Muda (Mahasiswa)', 'Bersatu dalam keberagaman', '2020-01-10 00:00:00', '2020-01-11 00:00:00'),
-(42, 'Mahdy', '089514215664', 'DKM Masjid', 'Pagi', 'Melong Raya RT/RW 05/25 Kel. Melong Kec. Cimahi Selatan Kota CImahi Jawa Barat, Indonesia', 'Pengajian Umum', 'Internal', 10, 20, 'Dosen', 'Anak Muda', 'Waktu dalam perspektif Al-Quran', '2020-01-16 00:00:00', '2020-01-17 00:00:00'),
-(43, 'Mahdy Khairudin', '089514215664', 'DKM Masjid', 'Pagi', 'Jl. Melong Raya No. 99 RT/RW 05/25 Kel. Melong Kec. Cimahi Selatan Kota CImahi Jawa Barat, Indonesia', 'Kuliah', 'Terbuka', 10, 20, 'Dosen', 'Anak Muda (Mahasiswa)', 'Cara supaya doa mustajab', '2020-01-29 00:00:00', '2020-01-30 00:00:00');
+INSERT INTO `kalender_ceramah` (`id`, `nama`, `telp`, `nama_lembaga`, `waktu`, `lokasi`, `jenis_acara`, `sifat_acara`, `jml_pria`, `jml_wanita`, `tamu`, `karakteristik`, `saran_tema`, `status_jadwal`, `date_created`, `tanggal_mulai`, `tanggal_akhir`) VALUES
+(21, 'Mahdy', '6282117140961', 'DKM Masjid', 'Pagi', 'Melong Raya 05/25 Melong Cimahi Selatan CImahi Jawa Barat Indonesia', 'Pengajian Umum', 'Internal', 10, 20, '', '', 'Cara supaya doa mustajab', 'Sudah dikonfirmasi', '2020-01-20', '2020-01-03 00:00:00', '2020-01-04 00:00:00');
 
 -- --------------------------------------------------------
 
@@ -85,7 +77,7 @@ CREATE TABLE `user` (
 --
 
 INSERT INTO `user` (`id`, `name`, `email`, `image`, `password`, `role_id`, `is_active`, `date_created`) VALUES
-(8, 'Mahdy', 'mr.mahdy5@gmail.com', 'default.jpg', '$2y$10$WKkUPacacIvun3zT93TvTObZ8OKmiLdYsDeu162tlYv7niP8hJNY2', 2, 1, 1579666479);
+(8, 'Mahdy', 'mr.mahdy5@gmail.com', 'default.jpg', '$2y$10$WKkUPacacIvun3zT93TvTObZ8OKmiLdYsDeu162tlYv7niP8hJNY2', 1, 1, 1579666479);
 
 -- --------------------------------------------------------
 
@@ -137,7 +129,7 @@ ALTER TABLE `user_role`
 -- AUTO_INCREMENT for table `kalender_ceramah`
 --
 ALTER TABLE `kalender_ceramah`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=44;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=45;
 
 --
 -- AUTO_INCREMENT for table `user`

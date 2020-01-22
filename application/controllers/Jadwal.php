@@ -8,6 +8,7 @@ class Jadwal extends CI_Controller
         parent::__construct();
         $this->load->model('jadwal_model');
         $this->load->library('form_validation');
+        $this->jadwal_model->autodelete();
     }
 
     public function index()
@@ -122,6 +123,8 @@ class Jadwal extends CI_Controller
                 'tamu' => $this->input->post('tamu', true),
                 'karakteristik' => $this->input->post('karakter', true),
                 'saran_tema' => $tema,
+                'status_jadwal' => 'Belum dikonfirmasi',
+                'date_created' => date('Y-m-d', time()),
                 'tanggal_mulai' => $this->input->post('start', true),
                 'tanggal_akhir' => $this->input->post('end', true)
             );
@@ -138,18 +141,6 @@ class Jadwal extends CI_Controller
         }
     }
 
-    function update()
-    {
-        if ($this->input->post('id')) {
-            $data = array(
-                'nama'   => $this->input->post('nama'),
-                'tanggal_mulai' => $this->input->post('start'),
-                'tanggal_akhir'  => $this->input->post('end')
-            );
-
-            $this->jadwal_model->update_event($data, $this->input->post('id'));
-        }
-    }
 
     function delete()
     {

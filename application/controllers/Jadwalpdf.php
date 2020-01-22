@@ -7,6 +7,7 @@ class Jadwalpdf extends CI_Controller
         parent::__construct();
         $this->load->model('jadwal_model');
         $this->load->library('pdf');
+        $this->jadwal_model->autodelete();
     }
 
     public function index($id)

@@ -3,88 +3,26 @@
     <div class="container">
         <div class="row">
             <div class="col-md-offset-1 col-md-6 col-sm-12">
-                <h2>Kalender Ceramah</h2>
+                <h2>Portal Sekertaris Pimpinan</h2>
             </div>
         </div>
     </div>
 </section>
 
-
 <section id="artikel-detail" data-stellar-background-ratio="0.5">
     <div class="container">
-        <div class="row">
-            <div class="col-md-12" id="pesan">
-                <?php if ($this->session->flashdata('pesan')) : ?>
-                    <?= $this->session->flashdata('pesan'); ?>
-                    <?php if ($this->session->flashdata('berhasil')) : ?>
-                        <?= $this->session->flashdata('berhasil'); ?>
-                    <?php endif; ?>
-                    <br><br>
-                <?php else : ?>
-                    <section class="modal fade" id="modal-jadwal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-                        <div class="modal-dialog modal-lg">
-                            <div class="modal-content modal-popup">
-
-                                <div class="modal-header">
-                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                        <span aria-hidden="true">&times;</span>
-                                    </button>
-                                </div>
-
-                                <div class="modal-body">
-                                    <div class="container-fluid">
-                                        <div class="row">
-                                            <div class="col-md-12 col-sm-12">
-                                                <div class="modal-title">
-                                                    <h2>Penjadwalan Ceramah</h2>
-                                                    <span class="line-bar">...</span>
-                                                </div>
-
-                                                <!-- TAB PANES -->
-                                                <div class="tab-content">
-                                                    <div role="tabpanel" class="tab-pane fade in active" id="sign_up">
-                                                        <p>Bismillahirrahmanirrahim</p>
-
-                                                        <p>Selamat datang di portal jadwal ceramah ustadz Aam Amiruddin, silahkan ikuti tahapan berikut untuk penjadwalan ceramah Ust. Aam Amiruddin:</p>
-                                                        <p>1. Mengisi formulir rencana penjadwalan (klik disini)</p>
-                                                        <p>2. Melakukan konfirmasi fiksasi penjadwalan dengan menghubungi sekretariat pimpinan di nomor 0813-2007-1001 atas nama Ihsan Kamil dan melampirkan form rencana penjadwalan yang telah dilengkapi.</p>
-                                                        <p>3. Waktu konfirmasi maksimal 3 hari setelah rencana penjadwalan</p>
-                                                        <p>4. Konfirmasi yang melebihi batas waktu yang ditentukan, diharuskan mengisi ulang formulir rencana penjadwalan baru.</p>
-                                                    </div>
-                                                </div>
-                                            </div>
-
-                                        </div>
-                                    </div>
-                                </div>
-
-                            </div>
-                        </div>
-                    </section>
-                <?php endif; ?>
-            </div>
-        </div>
-        <div id="calendar"></div>
-
-        <div class="row margintop40">
+        <div class="row margintop40 admin">
             <div class="col-md-12">
-                <h2>Untuk diketahui :</h2>
+                <h2>Profil SekPim</h2>
                 <span class="line-bar">...</span>
             </div>
         </div>
 
         <div class="row">
-            <div class="col-md-12">
-                <p>Ketentuan Penjadwalan Ceramah Ust. Aam Amiruddin :</p>
-                <p>-> kesediaan izin penggalangan dana wakaf pada saat ceramah.</p>
-                <p>-> kesediaan waktu untuk materi pembuka maksimal 15-30 menit sebelum ceramah ust.Aam Amiruddin.</p>
-                <p>-> kesediaan izin pemasangan rigging backdrop sebelum acara.</p>
-                <p>-> kesediaan 2 meja untuk penjualan buku-buku Ust.Aam Amiruddin dan informasi layanan haji dan umroh percik tours.</p>
-                <p>-> penyediaan space tempat untuk pengambilan video ust.Aam.</p>
-                <p>-> kesediaan izin survei lokasi kegiatan untuk tim Ust.Aam Amiruddinakan sekaligus koordinasi teknis untuk hari H.</p>
-                <p>-> disediakan kendaraan roda empat untuk antar jemput ust jika acara diselenggarakan di atas jam 18.00 WIB.</p>
-                <p>-> penyediaan akomodasi untuk ust.Aam Amiruddin dan tim official sebanyak 6 orang (khusus untuk kegiatan di luar daerah Bandung Raya)
-                </p>
+            <div class="col-md-4 profile text-center">
+                <img class="img-responsive img-circle" src="<?= base_url() . 'assets/images/profile/' . $admin['image'] ?>" alt="Profile" width="200">
+                <h4><?= $admin['name'] ?></h4>
+                <h4><?= $admin['email'] ?></h4>
             </div>
         </div>
     </div>
@@ -126,7 +64,7 @@
                                                 <label for="telp">No. telp & WA <span>*</span></label>
                                             </div>
                                             <div class="form-group col-md-6">
-                                                <input type="telp" name="telp" class="form-control telp" id="telp" placeholder="mulai dengan 62">
+                                                <input type="telp" name="telp" class="form-control telp" id="telp">
                                             </div>
                                         </div>
                                         <div class="form-row">

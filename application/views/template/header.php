@@ -41,31 +41,49 @@
                     <span class="icon icon-bar"></span>
                     <span class="icon icon-bar"></span>
                 </button>
-
-                <!-- lOGO TEXT HERE -->
-                <a href="<?= base_url('home'); ?>" class="navbar-brand">Aam Official</a>
+                <?php if ($this->session->userdata('role_id') == 1) : ?>
+                    <!-- lOGO TEXT HERE -->
+                    <a href="<?= base_url('home'); ?>" class="navbar-brand">Portal SekPim</a>
             </div>
 
             <!-- MENU LINKS -->
             <div class="collapse navbar-collapse">
                 <ul class="nav navbar-nav navbar-nav-first">
-                    <li><a href="<?= base_url('home'); ?>" class="smoothScroll">Home</a></li>
-                    <li><a href="#profil" class="smoothScroll">Profil</a></li>
-                    <li><a href="#artikel" class="smoothScroll">Artikel</a></li>
-                    <li><a href="#karya" class="smoothScroll">Karya</a></li>
-                    <li><a href="<?= base_url('jadwal/index') ?>">Jadwal</a></li>
-                    <li><a href="#contact" class="smoothScroll">Perkembangan</a></li>
+                    <li><a href="<?= base_url('admin'); ?>" class="smoothScroll">Profil</a></li>
+                    <li><a href="<?= base_url('admin/notif'); ?>" class="smoothScroll">Notifikasi</a></li>
                 </ul>
 
                 <ul class="nav navbar-nav navbar-right">
-                    <li><a href="#"><i class="fa fa-facebook-square"></i></a></li>
-                    <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                    <li><a href="#"><i class="fa fa-instagram"></i></a></li>
-                    <li class="section-btn"><a href="#" data-toggle="modal" data-target="#modal-login">Daftar / Login</a></li>
+                    <li class="section-btn"><a href="<?= base_url('auth/logout'); ?>">Logout</a></li>
                 </ul>
             </div>
+        <?php else : ?>
 
+            <a href="<?= base_url('home'); ?>" class="navbar-brand">Aam Official</a>
         </div>
+
+        <!-- MENU LINKS -->
+        <div class="collapse navbar-collapse">
+            <ul class="nav navbar-nav navbar-nav-first">
+                <li><a href="<?= base_url('home'); ?>" class="smoothScroll">Home</a></li>
+                <li><a href="#profil" class="smoothScroll">Profil</a></li>
+                <li><a href="#artikel" class="smoothScroll">Artikel</a></li>
+                <li><a href="#karya" class="smoothScroll">Karya</a></li>
+                <li><a href="<?= base_url('jadwal/index') ?>">Jadwal</a></li>
+                <li><a href="#contact" class="smoothScroll">Perkembangan</a></li>
+            </ul>
+
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="#"><i class="fa fa-facebook-square"></i></a></li>
+                <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                <li><a href="#"><i class="fa fa-instagram"></i></a></li>
+                <li class="section-btn"><a href="#" data-toggle="modal" data-target="#modal-login">Daftar / Login</a></li>
+            </ul>
+        </div>
+    <?php endif; ?>
+
+
+    </div>
     </section>
 
     <!-- MODAL -->

@@ -40,7 +40,6 @@
              </div>
          </div>
      </footer>
-
      <!-- SCRIPTS -->
      <script src="<?= base_url(); ?>assets/js/jquery.js"></script>
      <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
@@ -55,7 +54,8 @@
      <script>
          <?php if ($this->session->flashdata('message')) : ?>
              <?php if ($this->session->flashdata('login')) : ?>
-
+                 $('#sign_up').removeClass('active');
+                 $('#sign_in').addClass('active');
              <?php endif; ?>
              $('#modal-login').modal('show');
          <?php endif; ?>

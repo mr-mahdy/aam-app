@@ -29,4 +29,9 @@ class Jadwal_model extends CI_Model
         $this->db->where('id', $id);
         $this->db->delete('kalender_ceramah');
     }
+
+    public function autodelete()
+    {
+        $this->db->query("DELETE FROM kalender_ceramah WHERE DATEDIFF(CURDATE(), date_created) > 3 AND status_jadwal = 'Belum dikonfirmasi'");
+    }
 }

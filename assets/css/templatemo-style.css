@@ -417,8 +417,16 @@ section {
 	min-width: 500px;
 }
 
+/*---------------------------------------
+      LOGIN             
+  -----------------------------------------*/
+#modal-login .modal-body .col-md-12 {
+	text-align: center;
+}
 
-
+#sign_up form input {
+	color: #ffffff;
+}
 
 /*---------------------------------------
       PROFIL              
@@ -687,9 +695,6 @@ section {
       FORM             
   -----------------------------------------*/
 
-.hari label {
-	margin-left: 15px;
-}
 
 .jumlah .col-md-2 label {
 	margin-top: 10px;
@@ -804,6 +809,14 @@ footer span,
 	.modal-dialog {
 		width: 620px;
 	}
+
+	#modal-form .modal-dialog {
+		width: 820px;
+	}
+
+	#modal-login .modal-dialog {
+		width: 520px;
+	}
 }
 
 .modal-open .modal {
@@ -824,7 +837,8 @@ footer span,
 	padding: 2em;
 }
 
-#modal-jadwal .tab-content p {
+#modal-jadwal .tab-content p,
+#modal-form .tab-content label {
 	color: #ffffff;
 }
 
@@ -910,6 +924,28 @@ footer span,
 	margin-top: 20px;
 }
 
+/*---------------------------------------
+     FORM             
+  -----------------------------------------*/
+#form_jadwal input {
+	margin-top: -10px;
+	color: #ffffff;
+}
+
+#form_jadwal select {
+	margin-top: -10px;
+	background-color: #1f1f1f;
+	color: #ffffff;
+}
+
+#form_jadwal .row #pria,
+#form_jadwal .row #wanita {
+	margin-top: 10px;
+}
+
+#form_jadwal label span {
+	color: red;
+}
 
 /*---------------------------------------
      RESPONSIVE STYLES              

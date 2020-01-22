@@ -70,4 +70,5 @@
 
 	// Pop up Loader
 	$('#modal-jadwal').modal('show');
+
 })(jQuery);

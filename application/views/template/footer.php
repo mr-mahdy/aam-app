@@ -43,12 +43,23 @@
 
      <!-- SCRIPTS -->
      <script src="<?= base_url(); ?>assets/js/jquery.js"></script>
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.min.js"></script>
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.4.0/fullcalendar.min.js"></script>
      <script src="<?= base_url(); ?>assets/js/bootstrap.min.js"></script>
      <script src="<?= base_url(); ?>assets/js/jquery.stellar.min.js"></script>
      <script src="<?= base_url(); ?>assets/js/jquery.magnific-popup.min.js"></script>
      <script src="<?= base_url(); ?>assets/js/smoothscroll.js"></script>
      <script src="<?= base_url(); ?>assets/js/custom.js"></script>
      <script src="<?= base_url(); ?>assets/js/script.js"></script>
+     <script>
+         <?php if ($this->session->flashdata('message')) : ?>
+             <?php if ($this->session->flashdata('login')) : ?>
+
+             <?php endif; ?>
+             $('#modal-login').modal('show');
+         <?php endif; ?>
+     </script>
 
      </body>
 

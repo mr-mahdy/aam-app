@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 22, 2020 at 02:34 PM
+-- Generation Time: Jan 23, 2020 at 09:55 AM
 -- Server version: 10.1.36-MariaDB
 -- PHP Version: 7.2.11
 
@@ -43,17 +43,12 @@ CREATE TABLE `kalender_ceramah` (
   `karakteristik` varchar(255) NOT NULL,
   `saran_tema` varchar(255) NOT NULL,
   `status_jadwal` varchar(128) NOT NULL,
+  `file_cl` varchar(255) NOT NULL,
   `date_created` date NOT NULL,
   `tanggal_mulai` datetime NOT NULL,
-  `tanggal_akhir` datetime NOT NULL
+  `tanggal_akhir` datetime NOT NULL,
+  `id_user` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `kalender_ceramah`
---
-
-INSERT INTO `kalender_ceramah` (`id`, `nama`, `telp`, `nama_lembaga`, `waktu`, `lokasi`, `jenis_acara`, `sifat_acara`, `jml_pria`, `jml_wanita`, `tamu`, `karakteristik`, `saran_tema`, `status_jadwal`, `date_created`, `tanggal_mulai`, `tanggal_akhir`) VALUES
-(21, 'Mahdy', '6282117140961', 'DKM Masjid', 'Pagi', 'Melong Raya 05/25 Melong Cimahi Selatan CImahi Jawa Barat Indonesia', 'Pengajian Umum', 'Internal', 10, 20, '', '', 'Cara supaya doa mustajab', 'Sudah dikonfirmasi', '2020-01-20', '2020-01-03 00:00:00', '2020-01-04 00:00:00');
 
 -- --------------------------------------------------------
 
@@ -77,7 +72,8 @@ CREATE TABLE `user` (
 --
 
 INSERT INTO `user` (`id`, `name`, `email`, `image`, `password`, `role_id`, `is_active`, `date_created`) VALUES
-(8, 'Mahdy', 'mr.mahdy5@gmail.com', 'default.jpg', '$2y$10$WKkUPacacIvun3zT93TvTObZ8OKmiLdYsDeu162tlYv7niP8hJNY2', 1, 1, 1579666479);
+(8, 'Mahdy', 'mr.mahdy5@gmail.com', 'default.jpg', '$2y$10$WKkUPacacIvun3zT93TvTObZ8OKmiLdYsDeu162tlYv7niP8hJNY2', 1, 1, 1579666479),
+(9, 'Ardhian', 'user@gmail.com', 'default.jpg', '$2y$10$Imyw955p6uHWIMrJsYbpb.W5ejU0DdTAvMYFiafKFxhRhsofW5xQC', 2, 1, 1579758432);
 
 -- --------------------------------------------------------
 
@@ -129,13 +125,13 @@ ALTER TABLE `user_role`
 -- AUTO_INCREMENT for table `kalender_ceramah`
 --
 ALTER TABLE `kalender_ceramah`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=45;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
 
 --
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT for table `user_role`

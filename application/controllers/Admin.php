@@ -40,6 +40,7 @@ class Admin extends CI_Controller
     {
         if ($this->session->userdata('role_id') == 1) {
             $this->jadwal_model->update_event(['status_jadwal' => 'Sudah dikonfirmasi'], $id);
+            redirect('admin/notif');
         } else {
             redirect('home');
         }

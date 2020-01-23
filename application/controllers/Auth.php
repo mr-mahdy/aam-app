@@ -52,7 +52,7 @@ class Auth extends CI_Controller
 					if ($user['role_id'] == 1) {
 						redirect('admin');
 					} else {
-						redirect('user');
+						redirect('home');
 					}
 				} else {
 					$this->session->set_flashdata('login', 'Login');
@@ -81,6 +81,9 @@ class Auth extends CI_Controller
 			'required' => 'field email harus diisi',
 			'valid_email' => 'email tidak valid'
 		]);
+		$this->form_validation->set_rules('role', 'Jenis Akun', 'required|trim', [
+			'required' => 'field jenis akun harus diisi'
+		]);
 		$this->form_validation->set_rules('password', 'Password', 'required|trim|min_length[3]|matches[password2]', [
 			'matches' => 'password tidak sama!',
 			'min_length' => 'password terlalu pendek',
@@ -91,10 +94,12 @@ class Auth extends CI_Controller
 			'required' => 'field konfirmasi password harus diisi'
 		]);
 
+
 		if ($this->form_validation->run() == false) {
 			$this->session->set_flashdata('message', '<div class="alert alert-danger" role="alert">Akun gagal dibuat</div>');
 			$this->session->set_flashdata('nama', form_error('nama', ' <small class="text-danger pl-3">', '    </small>'));
 			$this->session->set_flashdata('email', form_error('email', ' <small class="text-danger pl-3">', '    </small>'));
+			$this->session->set_flashdata('role', form_error('role', ' <small class="text-danger pl-3">', '    </small>'));
 			$this->session->set_flashdata('password', form_error('password', ' <small class="text-danger pl-3">', '    </small>'));
 			$this->session->set_flashdata('password2', form_error('password2', ' <small class="text-danger pl-3">', '    </small>'));
 			redirect('home');
@@ -104,7 +109,7 @@ class Auth extends CI_Controller
 				'email' => htmlspecialchars($this->input->post('email', true)),
 				'image' => 'default.jpg',
 				'password' => password_hash($this->input->post('password'), PASSWORD_DEFAULT),
-				'role_id' => 1,
+				'role_id' => $this->input->post('role', true),
 				'is_active' => 1,
 				'date_created' => time()
 			];

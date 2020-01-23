@@ -428,6 +428,11 @@ section {
 	color: #ffffff;
 }
 
+#sign_up form select {
+	background-color: #1f1f1f;
+	color: #ffffff;
+}
+
 #sign_in form input {
 	color: #ffffff;
 }

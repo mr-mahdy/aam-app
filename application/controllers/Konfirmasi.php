@@ -1,6 +1,6 @@
 <?php
 ob_start();
-class Jadwalpdf extends CI_Controller
+class Konfirmasi extends CI_Controller
 {
     public function __construct()
     {
@@ -10,7 +10,7 @@ class Jadwalpdf extends CI_Controller
         $this->jadwal_model->autodelete();
     }
 
-    public function index($id)
+    public function index()
     {
         // intance object dan memberikan pengaturan halaman PDF
         $pdf = new FPDF('l', 'mm', 'A4');

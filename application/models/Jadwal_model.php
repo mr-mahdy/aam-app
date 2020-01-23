@@ -13,6 +13,16 @@ class Jadwal_model extends CI_Model
         return $this->db->get_where('kalender_ceramah', ['id' => $id])->row_array();
     }
 
+    public function getEventByEmail($email)
+    {
+        return $this->db->get_where('kalender_ceramah', ['email' => $email])->row_array();
+    }
+
+    public function getIdEvent($id)
+    {
+        return $this->db->get_where('kalender_ceramah', ['id_user' => $id])->row_array()['id_user'];
+    }
+
     function insert_event($data)
     {
         $this->db->insert('kalender_ceramah', $data);
@@ -21,6 +31,12 @@ class Jadwal_model extends CI_Model
     function update_event($data, $id)
     {
         $this->db->where('id', $id);
+        $this->db->update('kalender_ceramah', $data);
+    }
+
+    function update_file($data, $id)
+    {
+        $this->db->where('id_user', $id);
         $this->db->update('kalender_ceramah', $data);
     }
 

@@ -12,6 +12,23 @@
 
 <section id="artikel-detail" data-stellar-background-ratio="0.5">
     <div class="container">
+        <?php if ($this->session->userdata('role_id') == 2) : ?>
+            <div class="row">
+                <div class="col-md-4">
+                    <label for="">Upload File CL</label><br>
+                    <small>upload file surat konfirmasi kesediaan (CL) yang sudah diisi</small>
+                </div><br>
+                <div class="col-md-4 form-group">
+                    <form method="post" action="<?= base_url('jadwal/uploadFile'); ?>" enctype="multipart/form-data">
+                        <input type="file" name="cl" class="form-control">
+
+                </div>
+                <div class="col-md-1">
+                    <button class="btn btn-primary" type="submit">Submit</button>
+                    </form>
+                </div>
+            </div>
+        <?php endif; ?>
         <div class="row">
             <div class="col-md-12" id="pesan">
                 <?php if ($this->session->flashdata('pesan')) : ?>
@@ -113,9 +130,10 @@
                             <div class="tab-content">
                                 <div role="tabpanel" id="form_jadwal" class="tab-pane fade in active">
                                     <form action="<?= base_url('jadwal/insert'); ?>" method="post">
+                                        <input type="hidden" name="id" value="<?= $user['id'] ?>">
                                         <div class="form-row">
                                             <div class="form-group col-md-5">
-                                                <label for="nama">Nama Penanggungjawab <span>*</span></label>
+                                                <label for="nama">Nama Penanggungjawab</label>
                                             </div>
                                             <div class="form-group col-md-6">
                                                 <input type="text" name="nama" class="form-control nama" id="nama">

@@ -57,9 +57,30 @@
                     <li class="section-btn"><a href="<?= base_url('auth/logout'); ?>">Logout</a></li>
                 </ul>
             </div>
-        <?php else : ?>
+        <?php elseif ($this->session->userdata('role_id') == 2) : ?>
 
             <a href="<?= base_url('home'); ?>" class="navbar-brand">Aam Official</a>
+        </div>
+
+        <!-- MENU LINKS -->
+        <div class="collapse navbar-collapse">
+            <ul class="nav navbar-nav navbar-nav-first">
+                <li><a href="<?= base_url('home'); ?>" class="smoothScroll">Home</a></li>
+                <li><a href="#profil" class="smoothScroll">Profil</a></li>
+                <li><a href="#artikel" class="smoothScroll">Artikel</a></li>
+                <li><a href="#karya" class="smoothScroll">Karya</a></li>
+                <li><a href="<?= base_url('jadwal/index') ?>">Jadwal</a></li>
+                <li><a href="#contact" class="smoothScroll">Perkembangan</a></li>
+            </ul>
+
+            <ul class="nav navbar-nav navbar-right">
+                <li><br>Selamat Datang User</li>
+                <li class="section-btn"><a href="<?= base_url('auth/logout'); ?>">Logout</a></li>
+            </ul>
+        </div>
+    <?php else : ?>
+
+        <a href="<?= base_url('home'); ?>" class="navbar-brand">Aam Official</a>
         </div>
 
         <!-- MENU LINKS -->
@@ -123,6 +144,11 @@
                                             <?= $this->session->flashdata('nama'); ?>
                                             <input type="email" class="form-control" name="email" placeholder="Email">
                                             <?= $this->session->flashdata('email'); ?>
+                                            <select name="role" class="form-control">
+                                                <option value="1">Admin</option>
+                                                <option value="2">User</option>
+                                            </select>
+                                            <?= $this->session->flashdata('role'); ?>
                                             <input type="password" class="form-control" name="password" placeholder="Password">
                                             <?= $this->session->flashdata('password'); ?>
                                             <input type="password" class="form-control" name="password2" placeholder="Konfirmasi Password">
